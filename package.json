@@ -1,0 +1,19 @@
+{
+  "name": "node-ssi-middleware",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "uSwitch",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.0",
+    "node-ssi": "uswitch/node-ssi"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "webpack": "^2.2.1"
+  },
+  "scripts": {
+    "build": "webpack --config=./webpack.config.js"
+  }
+}
