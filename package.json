@@ -3,17 +3,24 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "uSwitch",
+  "description": "SSI Middleware for node JS applications (e.g. Express)",
+  "homepage": "https://github.com/uswitch/node-ssi-middleware",
+  "keywords": [
+    "middleware",
+    "express",
+    "ssi"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:uswitch/node-ssi-middleware.git"
+  },
   "license": "MIT",
   "dependencies": {
-    "babel-preset-es2015": "^6.24.0",
     "node-ssi": "uswitch/node-ssi"
   },
   "devDependencies": {
-    "babel-core": "^6.24.0",
-    "babel-loader": "^6.4.1",
-    "webpack": "^2.2.1"
-  },
-  "scripts": {
-    "build": "webpack --config=./webpack.config.js"
+    "babel-preset-es2015": "^6.24.0",
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0"
   }
 }

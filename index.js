@@ -1,24 +1,23 @@
-const SSI = require('node-ssi');
+var SSI = require('node-ssi');
 
-const NodeSsiMiddleware = (options) => {
-  const opts = Object.assign({}, { encoding: 'utf-8' }, options);
-  const ssi = new SSI(opts);
+var NodeSsiMiddleware = function NodeSsiMiddleware(options) {
+  var opts = Object.assign({}, { encoding: 'utf-8' }, options);
+  var ssi = new SSI(opts);
 
-  return (req, res, next) => {
-    const acceptHeader = req.headers['accept'];
+  return function (req, res, next) {
+    var acceptHeader = req.headers['accept'];
 
-    if(acceptHeader && acceptHeader.match("text/html")) {
-      const sendFn = res.send;
+    if (acceptHeader && acceptHeader.match("text/html")) {
+      var sendFn = res.send;
 
-      res.send = (body) => {
-        const prm = new Promise((resolve, reject) => {
-          ssi.compile(body, (err, content) => {
+      res.send = function (body) {
+        var prm = new Promise(function (resolve, reject) {
+          ssi.compile(body, function (err, content) {
             err && reject(body) || resolve(content);
           });
         });
 
-        prm.then(sendFn.bind(res))
-           .catch(sendFn.bind(res));
+        prm.then(sendFn.bind(res)).catch(sendFn.bind(res));
       };
     }
 
