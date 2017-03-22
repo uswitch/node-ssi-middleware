@@ -16,6 +16,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "node-ssi": "uswitch/node-ssi"
+    "node-ssi": "https://github.com/uswitch/node-ssi.git"
   }
 }
